@@ -1,0 +1,111 @@
+javascript:
+
+if(window.location.href.indexOf(%22ft.com%22) > -1) {
+
+(function () {
+
+var cookies = document.cookie.split(%22; %22);
+
+for (var c = 0;
+
+c < cookies.length; c++) {
+
+ var d = window.location.hostname.split(%22.%22);
+
+  while (d.length > 0) {
+
+   var cookieBase = encodeURIComponent(cookies[c].split(%22;%22)[0].split(%22=%22)[0]) + %22=;
+
+   expires=Thu, 01-Jan-1970 00:00:01 GMT;
+
+   domain=%22 + d.join(%22.%22) + %22 ;
+
+   path=%22;
+
+   var p = location.pathname.split(%22/%22);
+
+   document.cookie = cookieBase + %22/%22;
+
+   while (p.length > 0) { document.cookie = cookieBase + p.join(%22/%22);
+
+   p.pop();
+
+   };
+
+   d.shift();
+
+   }}})();
+
+   window.location.href=%22https://m.facebook.com/l.php?u=%22+encodeURIComponent(window.location.href)+%22?ClearCache=true%22;
+
+   alert(%22To read FT.com, we must redirect you through FaceBook!%22);
+
+   } else if (window.location.href.indexOf(%22technologyreview.com%22) > -1 || window.location.href.indexOf(%22investors.com%22) > -1 || window.location.href.indexOf(%22businessinsider.com%22) > -1) {
+
+   (function()%7Bwindow.location.href %3D %22https%3A%2F%2Foutline.com%2F%22 %2B window.location.href%7D)();
+
+   } else if (window.location.href.indexOf(%22wsj.com%22) > -1 ){
+
+void((function(){var a,b,c,e,f;f=0;a=document.cookie.split(%22; %22);
+
+for(e=0;e<a.length&&a[e];e++){f++;for(b=%22.%22+location.host;b;b=b.replace(/^(?:%5C.|[^%5C.]+)/,%22%22)){
+
+for(c=location.pathname;c;c=c.replace(/.$/,%22%22)){
+
+document.cookie=(a[e]+%22;
+
+ domain=%22+b+%22; path=%22+c+%22;
+
+  expires=%22+new Date((new Date()).getTime()-1e11).toGMTString());
+
+  }}}alert(%22Expired %22+f+%22 cookies\nRedirecting via Twitter Referrer%22);})());
+
+   window.localStorage.clear();
+
+   var pageTitle=document.getElementsByTagName('title')[0].innerText; 
+
+  
+
+   var host=(window.location.hostname);
+
+    var host=host.replace('www.','');
+
+     var host = host.split(%22.%22, 1);
+
+      var pageTitle = pageTitle.toString();
+
+       var twit= 'https://twitter.com/search?q=' + host + ' '+ pageTitle + '&src=typd';
+
+        window.open(twit, '_self');
+
+   
+
+   } else {
+
+   (function () { var cookies = document.cookie.split(%22; %22);
+
+   for (var c = 0; c < cookies.length; c++) {
+
+   var d = window.location.hostname.split(%22.%22);
+
+   while (d.length > 0) {
+
+   var cookieBase = encodeURIComponent(cookies[c].split(%22;%22)[0].split(%22=%22)[0]) + %22=; expires=Thu, 01-Jan-1970 00:00:01 GMT; domain=%22 + d.join(%22.%22) + %22 ;
+
+   path=%22;
+
+   var p = location.pathname.split(%22/%22);
+
+   document.cookie = cookieBase + %22/%22;
+
+   while (p.length > 0) {
+
+   document.cookie = cookieBase + p.join(%22/%22);
+
+   p.pop();
+
+   };
+
+   d.shift();}}})();window.localStorage.clear();
+
+   window.open(document.location + %22?ClearCache=true%22, %22_self%22);}
